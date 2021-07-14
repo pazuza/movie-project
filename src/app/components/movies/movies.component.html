@@ -1,0 +1,28 @@
+<div class="columns is-multiline is-mobile is-centered has-background-black pt-6 pb-6">
+  <div
+    class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+    <carousel [cellsToShow]='1' [cellsToScroll]='1' [cellWidth]='50' [autoplay]='true' [height]='1000' [loop]='true'
+      [minSwipeDistance]='2' [arrowsOutside]='true' [dots]='true'>
+      <div class="carousel-cell" *ngFor="let movie of marvelMovies">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image ">
+              <img [src]="movie.poster" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4">{{movie.nome}}</p>
+                <p class="subtitle is-6">{{movie.diretor}} | {{movie.ano}}</p>
+              </div>
+            </div>
+            <div class="content">
+              {{movie.descricao}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </carousel>
+  </div>
+</div>
